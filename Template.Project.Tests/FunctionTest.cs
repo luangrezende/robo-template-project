@@ -44,7 +44,7 @@ namespace Template.Project.Application.Lambda.Tests
             var context = new TestLambdaContext();
             var function = new Function();
 
-            function.FunctionHandler(evnt, context);
+            //function.FunctionHandler(evnt, context);
 
             var testLogger = context.Logger as TestLambdaLogger;
 			Assert.Contains("Stream processing complete", testLogger.Buffer.ToString());

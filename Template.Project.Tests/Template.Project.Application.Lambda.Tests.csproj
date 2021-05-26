@@ -12,6 +12,6 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Template.Project.Application.Lambda\Template.Project.Application.Lambda.csproj" />
+    <ProjectReference Include="..\Template.Project.Application\Template.Project.Application.Lambda.csproj" />
   </ItemGroup>
 </Project>

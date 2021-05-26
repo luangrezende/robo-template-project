@@ -12,7 +12,7 @@ namespace Template.Project.Application.Lambda.Controllers
 
         }
 
-        public void WriteSomething(ILambdaContext context)
+        public async void WriteSomething(ILambdaContext context)
         {
             context.Logger.LogLine("Test log!");
         }

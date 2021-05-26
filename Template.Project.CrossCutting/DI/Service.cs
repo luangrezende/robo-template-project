@@ -10,6 +10,8 @@ namespace Template.Project.CrossCutting.DI
         {
             services.AddScoped<ITemplateService, TemplateService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IEnvironmentService, EnvironmentService>();
+            services.AddScoped<IConfigurationService, ConfigurationService>();
 
             return services;
         }
