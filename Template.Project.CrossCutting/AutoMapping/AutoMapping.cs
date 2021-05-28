@@ -14,9 +14,6 @@ namespace Template.Project.CrossCutting.AutoMapping
             {
                 cfg.CreateMap<TemplateEntity, TemplateResponse>().ReverseMap();
                 cfg.CreateMap<TemplateResponse, TemplateResponseUtil>().ReverseMap();
-
-                cfg.CreateMap<UserEntity, UserResponse>().ReverseMap();
-                cfg.CreateMap<UserResponse, UserResponseUtil>().ReverseMap();
             });
             
             IMapper mapper = config.CreateMapper();

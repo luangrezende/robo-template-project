@@ -1,48 +1,44 @@
-using Amazon.Lambda.DynamoDBEvents;
-using Amazon.Lambda.Core;
-using System;
-using Amazon.DynamoDBv2.Model;
-using System.IO;
-using System.Text;
-using Template.Project.Application.Lambda.Controllers;
-using Microsoft.Extensions.DependencyInjection;
 using Template.Project.Domain.Application.Services.Interfaces;
 using Template.Project.Domain.Application.Services;
-
+using Microsoft.Extensions.DependencyInjection;
+using Template.Project.CrossCutting.DI;
+using Amazon.Lambda.Core;
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
 namespace Template.Project.Application.Lambda
 {
     public class Function
     {
-        public IConfigurationService ConfigService { get; }
-        private readonly AnvisaController _anvisaController;
+        private readonly IServiceCollection _serviceCollection;
+        private readonly IAnvisaService _anvisaService;
 
         public Function()
         {
-            // Set up Dependency Injection
-            var serviceCollection = new ServiceCollection();
-            ConfigureServices(serviceCollection);
-            var serviceProvider = serviceCollection.BuildServiceProvider();
-
-            // Get Configuration Service from DI system
-            ConfigService = serviceProvider.GetService<IConfigurationService>();
-
-            _anvisaController = new AnvisaController();
+            _serviceCollection = new ServiceCollection();
+            _anvisaService = new AnvisaService();
+            _serviceCollection.AddServices();
         }
 
-        private void ConfigureServices(IServiceCollection serviceCollection)
+        /// <summary>
+        /// Starts AI
+        /// </summary>
+        public void FunctionHandler(ILambdaContext context)
         {
-            // Register services with DI system
-            serviceCollection.AddTransient<IEnvironmentService, EnvironmentService>();
-            serviceCollection.AddTransient<IConfigurationService, ConfigurationService>();
+            _anvisaService.WriteSomething(context);
         }
 
-        public string FunctionHandler(string input, ILambdaContext context)
-        {
-            _anvisaController.WriteSomething(context);
-            return ConfigService.GetConfiguration()[input] ?? "None";
-        }
+        //public APIGatewayProxyResponse Get(APIGatewayProxyRequest request, ILambdaContext context)
+        //{
+        //    context.Logger.LogLine("Get Request\n");
 
+        //    var response = new APIGatewayProxyResponse
+        //    {
+        //        StatusCode = (int)HttpStatusCode.OK,
+        //        Body = "Hello AWS Serverless",
+        //        Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
+        //    };
+
+        //    return response;
+        //}
     }
 }

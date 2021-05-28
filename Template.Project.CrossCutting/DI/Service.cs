@@ -6,14 +6,11 @@ namespace Template.Project.CrossCutting.DI
 {
     public static class Service
     {
-        public static IServiceCollection AddServices(this IServiceCollection services)
+        public static IServiceCollection AddServices(this IServiceCollection serviceCollection)
         {
-            services.AddScoped<ITemplateService, TemplateService>();
-            services.AddScoped<IAuthService, AuthService>();
-            services.AddScoped<IEnvironmentService, EnvironmentService>();
-            services.AddScoped<IConfigurationService, ConfigurationService>();
+            serviceCollection.AddTransient<IAnvisaService, AnvisaService>();
 
-            return services;
+            return serviceCollection;
         }
     }
 }

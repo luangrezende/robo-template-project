@@ -13,6 +13,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 
 using Template.Project.Application.Lambda;
+using Template.Project.Application.Lambda.AI;
 
 namespace Template.Project.Application.Lambda.Tests
 {
@@ -42,7 +43,7 @@ namespace Template.Project.Application.Lambda.Tests
 
 
             var context = new TestLambdaContext();
-            var function = new Function();
+            var function = new Functions();
 
             //function.FunctionHandler(evnt, context);
 
