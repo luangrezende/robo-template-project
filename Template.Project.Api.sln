@@ -37,6 +37,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.Project.Applicatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.Project.Application.Lambda", "Template.Project.Application\Template.Project.Application.Lambda.csproj", "{081C4313-42BE-4BD5-944F-B333B6F3F801}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Template.Project.Application.Lambda.AI", "Template.Project.Application.Lambda.AI\Template.Project.Application.Lambda.AI.csproj", "{41B42529-8A2F-4EC3-B9FC-4C549CE3831C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{081C4313-42BE-4BD5-944F-B333B6F3F801}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{081C4313-42BE-4BD5-944F-B333B6F3F801}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{081C4313-42BE-4BD5-944F-B333B6F3F801}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41B42529-8A2F-4EC3-B9FC-4C549CE3831C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41B42529-8A2F-4EC3-B9FC-4C549CE3831C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41B42529-8A2F-4EC3-B9FC-4C549CE3831C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41B42529-8A2F-4EC3-B9FC-4C549CE3831C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{4D970C6D-3F21-430C-9FE2-B3D6680158C9} = {D3EC13D6-A679-491E-9696-1C1BDE2285CE}
 		{0303D71E-9E97-44A1-93E0-535ED34478C5} = {EBE66696-D0BE-4671-958B-A409C1BBD7CF}
 		{081C4313-42BE-4BD5-944F-B333B6F3F801} = {9F0D7E4B-9993-4658-BB0C-A1A5F585164C}
+		{41B42529-8A2F-4EC3-B9FC-4C549CE3831C} = {9F0D7E4B-9993-4658-BB0C-A1A5F585164C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D772AC39-BCC2-40B6-B95E-87E8BA11B8B8}
